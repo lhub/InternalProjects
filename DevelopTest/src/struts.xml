@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="default" extends="struts-default">
+		<action name="welcome-user" class="com.action.WelcomeUser">
+			<result name="success">/WEB-INF/welcome-user.jsp</result>
+		</action>
+	</package>
+
+	<package name="showcase" extends="struts-default,json-default" namespace="/">
+		<action name="show-results" class="com.action.JsonTable">
+			<result name="success">/WEB-INF/results.jsp</result>
+			<result name="input">/WEB-INF/failure.jsp</result>
+		</action>
+	</package>
+</struts>
